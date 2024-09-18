@@ -28,11 +28,11 @@
       Colour
     </button>
 
-    <button type="button" id="warm" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Warm</button>
+    <button onclick="setColour('Warm')" type="button" id="warm" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Warm</button>
 
-    <button type="button" id="cold" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Cold</button>
+    <button onclick="setColour('Cold')" type="button" id="cold" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Cold</button>
 
-    <button type="button" id="black" class=" text-black bg-gray-100 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-100 dark:hover:bg-gray-300 dark:focus:ring-gray-700 dark:border-gray-700 cursor-pointer">Erase</button>
+    <button onclick="resetGrid()" type="button" id="black" class=" text-black bg-gray-100 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-100 dark:hover:bg-gray-300 dark:focus:ring-gray-700 dark:border-gray-700 cursor-pointer">Erase</button>
 
     <span id="sizeValue" class="size-value"></span>
 

@@ -1,26 +1,22 @@
+let colour = 'black';
+
 document.addEventListener("DOMContentLoaded", () => {
   createGrid(16);
 
   const gridSizeInput = document.querySelector('#grid');
   const sizeValue = document.querySelector('#sizeValue');
 
-//   // Update the grid when the range slider changes
-//   gridSizeInput.addEventListener('input', () => {
-//     const size = gridSizeInput.value;
-//     sizeValue.textContent = size;  // Display the current size value
-//     reset(size);                   // Reset the grid with the new size
-//   });
-// });
+  gridSizeInput.addEventListener('input', () => {
+    const size = gridSizeInput.value;
+    sizeValue.innerText = `${size}x ${size}`;
+    reset(size);
+  });
 
-gridSizeInput.addEventListener('input', ()=>{
-  const size = gridSizeInput.value;
-  sizeValue.innerText= `${size }x ${ size}`;
-  reset(size);
+  const colorPicker = document.querySelector('#pickColor');
+  colorPicker.addEventListener('input', () => {
+    colour = colorPicker.value;
+  });
 });
-})
-
-
-
 
 const createGrid = (size) => {
   const container = document.querySelector('.container');
@@ -30,6 +26,7 @@ const createGrid = (size) => {
   const divsNumber = size * size;
   for (let i = 0; i < divsNumber; i++) {
     const div = document.createElement('div');
+    div.addEventListener('mouseover', colourDiv); // Correctly add the function reference
     div.style.backgroundColor = "#D5C6C4";
     div.style.border = '1px solid rgba(0, 0, 0, 0.1)';
     container.appendChild(div);
@@ -43,3 +40,25 @@ const reset = (size) => {
   }
   createGrid(size);
 };
+
+const colourDiv = (event) => {
+  const targetDiv = event.target; // Use event.target to get the hovered div
+  if (colour === 'Warm') {
+    targetDiv.style.backgroundColor = `hsl(${Math.random() * (60 + (360 - 240)) + (Math.random() < 0.5 ? 0 : 240)}, 100%, 50%)`;
+  } else if (colour === 'Cold') {
+    targetDiv.style.backgroundColor = `hsl(${Math.random() * (240 - 120) + 120}, 100%, 50%)`;
+  } else {
+    targetDiv.style.backgroundColor = colour; // Use the selected color from the picker
+  }
+};
+
+const setColour = (userInput) => {
+  colour = userInput;
+};
+
+const resetGrid=()=>{
+  const divs = document.querySelectorAll('.container div');
+  divs.forEach(div => {
+    div.style.backgroundColor = "#D5C6C4";
+  });
+}
