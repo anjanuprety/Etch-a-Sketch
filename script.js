@@ -1,10 +1,21 @@
-const square= document.querySelector('.container')
-for(let i=0; i<16; i++){
-  for(let j=0; j<16; j++){
-    const div= document.createElement('div');
-    div.classList.add('grid');
-    div.style.flex="0 0 60px";
-    div.style.border=' 1px solid black'
-    square.appendChild(div);
-  }
+document.addEventListener("DOMContentLoaded",()=>{
+  createGrid(16);
+})
+
+const createGrid =(size)=>{
+  const container= document.querySelector('.container');
+  container.style.gridTemplateColumns= `repeat(${size}, 1fr)`;
+  container.style.gridTemplateRows= `repeat(${size}, 1fr)`;
+
+  const divsNumber= size*size;
+    for(let i=0; i<divsNumber; i++){
+      const div= document.createElement('div');
+      div.style.backgroundColor= ("#D5C6C4");
+      div.style.border=('solid 1px');
+      container.appendChild(div)
+    }
+}
+
+const getSize=()=>{
+  
 }
