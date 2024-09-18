@@ -636,16 +636,12 @@ video {
   height: 7rem;
 }
 
-.h-\[600px\] {
-  height: 600px;
+.h-\[550px\] {
+  height: 550px;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[550px\] {
-  height: 550px;
 }
 
 .max-h-screen {
@@ -656,16 +652,36 @@ video {
   width: 150px;
 }
 
-.w-\[600px\] {
-  width: 600px;
+.w-\[550px\] {
+  width: 550px;
 }
 
 .w-full {
   width: 100%;
 }
 
-.w-\[550px\] {
-  width: 550px;
+@keyframes gradientAnimation {
+  0% {
+    background-image: linear-gradient(to left top, #2f598a, #2f547d, #304e70, #314963, #314357, #364759, #3b4b5c, #404f5e, #4c5f70, #577083, #638196, #6f93a9);
+    background-size: 300% 300%;
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-image: linear-gradient(to left top, #6f93a9, #638196, #577083, #4c5f70, #404f5e, #3b4b5c, #364759, #314357, #314963, #304e70, #2f547d, #2f598a);
+    background-size: 300% 300%;
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-image: linear-gradient(to left top, #2f598a, #2f547d, #304e70, #314963, #314357, #364759, #3b4b5c, #404f5e, #4c5f70, #577083, #638196, #6f93a9);
+    background-size: 300% 300%;
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientAnimation 12s ease-in-out infinite;
 }
 
 .cursor-pointer {
@@ -705,6 +721,11 @@ video {
   border-color: rgb(49 46 129 / var(--tw-border-opacity));
 }
 
+.border-\[\#4d333c\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(77 51 60 / var(--tw-border-opacity));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -715,9 +736,8 @@ video {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.bg-sky-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+.bg-custom-gradient {
+  background-image: linear-gradient(to left top, #2f598a, #2f547d, #304e70, #314963, #314357, #364759, #3b4b5c, #404f5e, #4c5f70, #577083, #638196, #6f93a9);
 }
 
 .bg-gradient-to-br {
@@ -788,6 +808,10 @@ video {
   font-weight: 500;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -809,6 +833,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#4d333c\] {
+  --tw-text-opacity: 1;
+  color: rgb(77 51 60 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
