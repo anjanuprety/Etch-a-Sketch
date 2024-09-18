@@ -1,7 +1,21 @@
 let colour = 'black';
+let click= false;
 
 document.addEventListener("DOMContentLoaded", () => {
   createGrid(16);
+
+  document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') {
+      click = !click;
+      let draw = document.querySelector('#draw');
+      if(click){
+        draw.innerHTML = ' You can now Sketch';
+    }
+    else{
+        draw.innerHTML = 'Click to start drawing';
+    }
+    }
+  })
 
   const gridSizeInput = document.querySelector('#grid');
   const sizeValue = document.querySelector('#sizeValue');
@@ -42,14 +56,17 @@ const reset = (size) => {
 };
 
 const colourDiv = (event) => {
-  const targetDiv = event.target; // Use event.target to get the hovered div
-  if (colour === 'Warm') {
-    targetDiv.style.backgroundColor = `hsl(${Math.random() * (60 + (360 - 240)) + (Math.random() < 0.5 ? 0 : 240)}, 100%, 50%)`;
-  } else if (colour === 'Cold') {
-    targetDiv.style.backgroundColor = `hsl(${Math.random() * (240 - 120) + 120}, 100%, 50%)`;
-  } else {
-    targetDiv.style.backgroundColor = colour; // Use the selected color from the picker
+  if (click === true){
+    const targetDiv = event.target; // Use event.target to get the hovered div
+    if (colour === 'Warm') {
+      targetDiv.style.backgroundColor = `hsl(${Math.random() * (60 + (360 - 240)) + (Math.random() < 0.5 ? 0 : 240)}, 100%, 50%)`;
+    } else if (colour === 'Cold') {
+      targetDiv.style.backgroundColor = `hsl(${Math.random() * (240 - 120) + 120}, 100%, 50%)`;
+    } else {
+      targetDiv.style.backgroundColor = colour; // Use the selected color from the picker
+    }
   }
+ 
 };
 
 const setColour = (userInput) => {
