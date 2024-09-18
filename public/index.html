@@ -8,29 +8,39 @@
   <title>Document</title>
 </head>
 
-<body class="flex flex-col justify-center items-center bg-custom-gradient">
-  <div class="header h-28 pt-8">
-    <h1 class="text-4xl font-mono font-bold leading-none tracking-tight text-zinc-800 md:text-5xl lg:text-6xl">Etch A Sketch</h1>
-  </div>
-
-  
+<body class="bg-sky-700 max-h-screen">
  
-  <div class="board">
-    <div class="container grid w-[600px] h-[600px] max-h-200 max-w-200 border-[10px] border-amber-900"></div>
+<main class="flex flex-col justify-center items-center">
+  <header class="header h-28 pt-8">
+    <h1 class="text-4xl font-mono font-bold leading-none tracking-tight text-indigo-950 md:text-5xl lg:text-6xl">Etch A Sketch</h1>
+  </header>
+
+  <div class="board"></div>
+    <div class="container grid w-[600px] h-[600px] max-h-200 max-w-200 border-[10px] border-indigo-900"></div>
   </div>
+</main>
+  
 
-  <div class="content flex flex-row items-center w-96 justify-around mt-4">
+  <div class="content flex flex-wrap flex-col items-center w-[150px] justify-around mt-4 mb-5 relative bottom-[30rem] left-40">
 
-    <button type="button" class=" text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Warm</button>
-    <button type="button" class=" text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Black</button>
-    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cold</button>
+    <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 relative">
+      <input type="color" id="pickColor" value="#333333" class="colorPicker absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+      Colour
+    </button>
+
+    <button type="button" id="warm" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Warm</button>
+
+    <button type="button" id="cold" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Cold</button>
+
+    <button type="button" id="black" class=" text-black bg-gray-100 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-100 dark:hover:bg-gray-300 dark:focus:ring-gray-700 dark:border-gray-700 cursor-pointer">Erase</button>
+
+    <span id="sizeValue" class="size-value"></span>
+
+   <input type="range" id="grid" value="16" min="1" max="48">
   
   </div>
 
-
-
-    
-  
+ 
  
 
 
